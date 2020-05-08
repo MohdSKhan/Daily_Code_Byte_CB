@@ -1,0 +1,36 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+int binString(int length,string output)
+{
+    if(length==0)
+    {
+        //cout<<output<<endl;
+        //countt++;
+        return 1;
+    }
+    int countt=0;
+    if(output[output.length()-1]!='1')
+        countt=binString(length-1,output+'0')+
+                binString(length-1,output+'1');
+    else
+        countt=binString(length-1,output+'0');
+    return countt;
+
+}
+
+int main()
+{
+    int testcases;
+    cin>>testcases;
+    while(testcases--)
+    {
+        int length;
+        int countt=0;
+        cin>>length;
+        string output="";
+        //binString(length,output);
+        cout<<binString(length,output)<<endl;
+    }
+}
+
